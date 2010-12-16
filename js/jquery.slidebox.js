@@ -106,7 +106,7 @@
     }
 
     function setPosition() {
-      if (selectors.parent.context.nodeName.toUpperCase != 'BODY') {
+      if (selectors.parent.context.nodeName.toUpperCase() != 'BODY') {
         if (!selectors.parent.css('position') || selectors.parent.css('position') == 'static') {
           selectors.parent.css('position', 'relative');
         }
