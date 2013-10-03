@@ -118,7 +118,7 @@
           position_bottom = 0;
       if (configs.axis == 'x') {
         var close_top = configs.space + 'px',
-            close_left = (selectors.handle.outerWidth() - selectors.container.outerWidth()) + 'px',
+            close_left = (selectors.handle.outerWidth(false) - selectors.container.outerWidth(false)) + 'px',
             open_top = configs.space + 'px',
             open_left = '0px';
 
@@ -163,15 +163,15 @@
             };
           }
         }
-        var contentsHeight = selectors.contents.outerHeight(),
-            handleHeight = selectors.handle.outerHeight();
+        var contentsHeight = selectors.contents.outerHeight(false),
+            handleHeight = selectors.handle.outerHeight(false);
         if (contentsHeight > handleHeight) {
           selectors.handle.css('height', contentsHeight - (handleHeight - selectors.handle.height()) + 'px');
         } else {
           selectors.contents.css('height', handleHeight - (contentsHeight - selectors.contents.height()) + 'px');
         }
       } else {
-        var close_top = (selectors.handle.outerHeight() - selectors.container.outerHeight()) + 'px',
+        var close_top = (selectors.handle.outerHeight(false) - selectors.container.outerHeight(false)) + 'px',
             close_left = configs.space + 'px',
             open_top = '0px',
             open_left = configs.space + 'px';
@@ -222,7 +222,7 @@
         selectors.container.css('position', 'fixed');
       } else {
         selectors.container.css('position', 'absolute');
-        /* Todo: IE6 �ɑΉ� */
+        /* Todo: IE6 に対応 */
       }
       selectors.container.css(configs.position.css_close);
     }
