@@ -106,7 +106,13 @@
     }
 
     function setPosition() {
-      if (selectors.parent.context.nodeName.toUpperCase() != 'BODY') {
+      var nodeName;
+      if (typeof selectors.parent.context === 'undefined') {
+        nodeName = selectors.parent[0].nodeName.toUpperCase();
+      } else {
+        nodeName = selectors.parent.context.nodeName.toUpperCase();
+      }
+      if (nodeName !== 'BODY') {
         if (!selectors.parent.css('position') || selectors.parent.css('position') == 'static') {
           selectors.parent.css('position', 'relative');
         }

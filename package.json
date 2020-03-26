@@ -1,0 +1,11 @@
+{
+  "name": "jquery.slidebox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "3.x"
+  },
+  "author": "Tom Shimada",
+  "license": "MIT"
+}
